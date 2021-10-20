@@ -1,0 +1,21 @@
+<label for="chatBotState" class="chatBotBtn">
+    <i class="fa fa-rocket fa-2x"></i>
+</label>
+
+<input id="chatBotState" type="checkbox" hidden/>
+<div class="chatContent">
+    <div class="headerChat">
+        <p> Chat Bot</p>
+        <label for="chatBotState"><i class="fa fa-close"></i></label>
+    </div>
+    <div class="listMsg">
+        <div class="backg"></div>
+        <div class="msgs" id="listMesgContent">
+            <p class="msg"> hello how can i help you ?</p>
+        </div>
+        <div class="msgInput">
+            <input type="text" placeholder="message ..." class="inputMesg" id="idMesg" />
+            <button (click)="sendMesg()"><i class="fa fa-send"></i></button>
+        </div>
+    </div>
+</div>
