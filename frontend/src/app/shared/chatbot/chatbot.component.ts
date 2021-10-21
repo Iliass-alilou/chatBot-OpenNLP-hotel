@@ -17,6 +17,6 @@ export class ChatbotComponent implements OnInit {
       return this.router.url;
     }
     sendMesg(){
-      alert(document.getElementById("idMesg").value)
+      //alert(document.getElementById("idMesg").value)
     }
 }

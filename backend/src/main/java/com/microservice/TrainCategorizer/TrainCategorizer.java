@@ -22,8 +22,6 @@ import opennlp.tools.util.model.ModelUtil;
 public class TrainCategorizer {
 
 	public  DoccatModel trainCategorizerModel() throws FileNotFoundException, IOException {
-		// faq-categorizer.txt is a custom training data with categories as per our chat
-		// requirements.
 		InputStreamFactory inputStreamFactory = new MarkableFileInputStreamFactory(new File("faq-categorizer.txt"));
 		ObjectStream<String> lineStream = new PlainTextByLineStream(inputStreamFactory, StandardCharsets.UTF_8);
 		ObjectStream<DocumentSample> sampleStream = new DocumentSampleStream(lineStream);
@@ -33,7 +31,6 @@ public class TrainCategorizer {
 		TrainingParameters params = ModelUtil.createDefaultTrainingParameters();
 		params.put(TrainingParameters.CUTOFF_PARAM, 0);
 
-		// Train a model with classifications from above file.
 		DoccatModel model = DocumentCategorizerME.train("en", sampleStream, params, factory);
 		return model;
 	}
