@@ -13,15 +13,14 @@ import opennlp.tools.sentdetect.SentenceModel;
 public class BreakSentences {
 
 	public  String[] breakSentences(String data) throws FileNotFoundException, IOException {
-		// Better to read file once at start of program & store model in instance
-		// variable. but keeping here for simplicity in understanding.
 		try (InputStream modelIn = new FileInputStream("en-sent.bin")) {
 
 			SentenceDetectorME myCategorizer = new SentenceDetectorME(new SentenceModel(modelIn));
 
 			String[] sentences = myCategorizer.sentDetect(data);
+			
 			System.out.println("Sentence Detection: " + Arrays.stream(sentences).collect(Collectors.joining(" | ")));
-
+			
 			return sentences;
 		}
 	}
