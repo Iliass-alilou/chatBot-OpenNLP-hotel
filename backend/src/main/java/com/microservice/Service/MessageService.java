@@ -24,7 +24,8 @@ public class MessageService {
 	static {
 		questionAnswer.put("greeting", "Hello, how can I help you?");
 		questionAnswer.put("person-by-room","2 persons by room");
-		questionAnswer.put("price-room", "50$ for one night");
+		questionAnswer.put("price-room", " for one night");
+		questionAnswer.put("available-room", "");
 		questionAnswer.put("reserve-room", "yeah Of course, wait a minute");
 		questionAnswer.put("conversation-continue", "What else can I help you with?");
 		questionAnswer.put("conversation-complete", "Nice chatting with you. Bybye.");
@@ -54,8 +55,14 @@ public class MessageService {
 
 				DetectCategory detectCategory = new DetectCategory();
 				String category = detectCategory.detectCategory(model, lemmas);
-
-				answer = answer + " " + questionAnswer.get(category);
+				
+				if(category.equals("available-room")) {
+					//check
+					answer="yeah, 2 rooms are already ";
+				}else if(category.equals("price-room")) {
+					answer += "50$ " + questionAnswer.get(category);
+				}
+				answer += questionAnswer.get(category);
 
 			}
 
