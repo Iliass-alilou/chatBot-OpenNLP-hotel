@@ -78,6 +78,7 @@
     overflow-y: auto !important;
     overflow-x: hidden;
     position: relative;
+    bottom: 0;
 }
 
 .chatContent>.listMsg>.msgs>.msg {
@@ -89,6 +90,15 @@
     padding-left: 8px;
     color: white;
     clip-path: polygon(6px 0, 100% 0%, 100% 100%, 6px 100%, 6px 45%, 0 23%);
+}
+
+.chatContent>.listMsg>.msgs>.msg:first-child {
+    margin-left: Calc(35% / 2);
+    clip-path: none;
+    font-size: 15px;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(125, 130, 134);
 }
 
 .chatContent>.listMsg>.msgs>.msg:nth-child(even) {

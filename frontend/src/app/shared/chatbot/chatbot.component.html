@@ -10,12 +10,13 @@
     </div>
     <div class="listMsg">
         <div class="backg"></div>
-        <div class="msgs" id="listMesgContent">
-            <p class="msg"> hello how can i help you ?</p>
+        <div class="msgs" #listMesgContent id="listMesgContent">
+            <p class="msg">Hello! I am your assistant!</p>
+            <p *ngFor="let msg of listMsg; let index = index;" class="msg">{{msg["message"]}}</p>
         </div>
-        <div class="msgInput">
-            <input type="text" placeholder="message ..." class="inputMesg" id="idMesg" />
-            <button (click)="sendMesg()"><i class="fa fa-send"></i></button>
-        </div>
+        <form (submit)="sendMesg($event,userInput,listMesgContent)" class="msgInput">
+            <input type="text" #userInput autocomplete="off" placeholder="message ..." class="inputMesg" id="idMesg" />
+            <button><i class="fa fa-send"></i></button>
+        </form>
     </div>
 </div>

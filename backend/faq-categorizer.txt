@@ -1,6 +1,7 @@
 greeting	 hi hi. hello how are you ? hey . hows it going good morning good evening good afternoon howdy 
-conversation-continue	 ok wow great oh is it ? oh ohh Thats great Good Really hmm lemme think hm hmmm hmmmmm
-price-room	 How much is the cost ? What's the price ? What's the cost ? How much is price? How much it costs ? price cost money how much. how much? what is the price of a night ? 
-person-by-room	 tell me more details about room ? how much people by room ? how much person by room ?
-reserve-room	 can i reserve the room number 
+conversation-continue	 ok wow great oh is it ? oh oh Thats great Good Really
+price-room	 How much is the cost ? What's the price ? What's the cost ? How much is price ? How much it costs ? price cost money. how much? what is the price of a night ? 
+person-by-room	 tell me more details about room ? how much people person by room ?
+available-room	 is there any room available ? is there any room for me ? 
+reserve-room	 can i reserve get the room number
 conversation-complete	 Thanks done that's all thats it. thats it I am done Thank you for information Thank. thanks. thank you. thanks nothing else thats it.

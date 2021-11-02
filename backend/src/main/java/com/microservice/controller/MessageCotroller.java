@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +25,7 @@ import opennlp.tools.langdetect.LanguageDetectorModel;
 
 @RestController
 @RequestMapping(value = "/message")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MessageCotroller {
 	
 	@Autowired
@@ -32,6 +36,7 @@ public class MessageCotroller {
 	
 
 	@PostMapping
+<<<<<<< HEAD
 	public String AskQuestion (@RequestBody String userInput) throws FileNotFoundException, IOException, InterruptedException {
 		File modelFile = new File(".\\langdetect-183.bin");
 		LanguageDetectorModel trainedModel = new LanguageDetectorModel(modelFile);
@@ -42,5 +47,20 @@ public class MessageCotroller {
 		
 		
 		return "Predicted language: "+ languageMapper.getLanguage(languages[0].getLang()) +"\n" +"Chat Response "+response ;
+=======
+	public ResponseEntity<Resp> getAnswers(@RequestBody String userInput) throws FileNotFoundException, IOException, InterruptedException {
+		
+		String response = messageService.Response(userInput);
+		
+		return new ResponseEntity<Resp>(new Resp(response),HttpStatus.OK);
+>>>>>>> 8730e28f4f7199aae45cdf97adcc8e699c0695fb
+	}
+}
+
+
+class Resp{
+	public String rsp;
+	public Resp(String rsp) {
+		this.rsp=rsp;
 	}
 }
