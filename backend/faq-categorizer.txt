@@ -1,3 +1,10 @@
+greeting-fr	 salut salut. Bonjour comment vas-tu ? Hey . comment ça va bonjour bonsoir bon après-midi salut
+conversation-continue-fr	 ok wow super oh c'est ça ? oh oh c'est super bien vraiment
+price-room-fr	 combien ça coût cout ? Quel est le prix ? Quel est le coût ? Combien coûte le prix ? Combien ça coûte ? le prix coûte de l'argent. combien? quel est le prix d'une nuit ?
+person-by-room-fr	 dites-moi plus de détails sur la chambre ? combien de personnes personne par chambre ?
+available-room-fr	 y a-t-il une chambre disponible ? y a-t-il de la place pour moi ?
+reserve-room-fr	 puis-je réserver obtenir le numéro de la chambre
+conversation-complete-fr	 Merci c'est tout c'est tout. ça y est j'ai fini Merci pour l'information Merci. Merci. Merci. merci rien d'autre c'est tout.
 greeting	 hi hi. hello how are you ? hey . hows it going good morning good evening good afternoon howdy 
 conversation-continue	 ok wow great oh is it ? oh oh Thats great Good Really
 price-room	 How much is the cost ? What's the price ? What's the cost ? How much is price ? How much it costs ? price cost money. how much? what is the price of a night ? 

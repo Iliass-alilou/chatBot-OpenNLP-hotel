@@ -22,6 +22,16 @@ public class MessageService {
 	private static Map<String, String> questionAnswer = new HashMap<>();
 	
 	static {
+
+		questionAnswer.put("greeting-fr", "Bonjour! Monsieur comment je peux vous aider");
+		questionAnswer.put("person-by-room-fr","2 personnes par chambre");
+		questionAnswer.put("price-room-fr", " pour la nuit");
+		questionAnswer.put("available-room-fr", "");
+		questionAnswer.put("reserve-room-fr", "oui bien sur voila le lien : http://localhost:4200/#/forme-reservation");
+		questionAnswer.put("conversation-continue-fr", "Avez vous une autre question?");
+		questionAnswer.put("conversation-complete-fr", "Trés bonne journée");
+		
+		
 		questionAnswer.put("greeting", "Hello, how can I help you?");
 		questionAnswer.put("person-by-room","2 persons by room");
 		questionAnswer.put("price-room", " for one night");
@@ -36,7 +46,6 @@ public class MessageService {
 		TrainCategorizer trainCategorizer = new TrainCategorizer();
 		DoccatModel model = trainCategorizer.trainCategorizerModel();
 		
-			
 			BreakSentences breakSentences = new BreakSentences();
 			String[] sentences = breakSentences.breakSentences(userInput);
 
@@ -56,12 +65,15 @@ public class MessageService {
 				DetectCategory detectCategory = new DetectCategory();
 				String category = detectCategory.detectCategory(model, lemmas);
 				
-				if(category.equals("available-room")) {
+				if(category.equals("available-room-fr")) {
 					//check
-					answer="yeah, 2 rooms are already ";
-				}else if(category.equals("price-room")) {
+					answer="oui, il reste que 2 chambres ";
+				}else if(category.equals("available-room")) {
+					answer="Yeah, there are 2rooms";
+				}else if(category.equals("price-room") || category.equals("price-room-fr")) {
 					answer += "50$ " + questionAnswer.get(category);
 				}
+				
 				answer += questionAnswer.get(category);
 
 			}
