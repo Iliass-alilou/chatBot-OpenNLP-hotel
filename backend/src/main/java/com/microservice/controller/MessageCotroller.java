@@ -33,19 +33,7 @@ public class MessageCotroller {
 	MessageService messageService;
 	
 	LanguageMapper languageMapper = new LanguageMapper();
-	
-	
-	@GetMapping
-	public String askQuestion (@RequestBody String userInput) throws FileNotFoundException, IOException, InterruptedException {
-		File modelFile = new File(".\\langdetect-183.bin");
-		LanguageDetectorModel trainedModel = new LanguageDetectorModel(modelFile);
-		LanguageDetector languageDetector = new LanguageDetectorME(trainedModel);
-		Language[] languages = languageDetector.predictLanguages(userInput);
-		
-		String response = messageService.Response(userInput);
-		
-		return "Predicted language: "+ languageMapper.getLanguage(languages[0].getLang()) +"\n" +"Chat Response "+response ;
-	}
+
 	
 	@PostMapping
 	public ResponseEntity<Resp> getAnswers(@RequestBody String userInput) throws FileNotFoundException, IOException, InterruptedException {

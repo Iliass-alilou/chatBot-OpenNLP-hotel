@@ -3,8 +3,10 @@ package com.microservice.Service;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.microservice.BreakSentence.BreakSentences;
@@ -14,12 +16,18 @@ import com.microservice.Tokenization.Tokenizer;
 import com.microservice.TrainCategorizer.TrainCategorizer;
 
 import Lemmatizer.LemmatizeTokens;
+import models.Room;
 import opennlp.tools.doccat.DoccatModel;
+import repositories.HotelRepo;
 
 @Service
 public class MessageService {
 	
 	private static Map<String, String> questionAnswer = new HashMap<>();
+	
+	
+	@Autowired
+	HotelRepo hotelRepo;
 	
 	static {
 
@@ -66,7 +74,8 @@ public class MessageService {
 				String category = detectCategory.detectCategory(model, lemmas);
 				
 				if(category.equals("available-room-fr")) {
-					//check
+					List<Room> rooms = 	hotelRepo.findAll();
+					System.out.println(rooms.get(0));
 					answer="oui, il reste que 2 chambres ";
 				}else if(category.equals("available-room")) {
 					answer="Yeah, there are 2rooms";
