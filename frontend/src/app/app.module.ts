@@ -11,13 +11,15 @@ import { FooterComponent } from './shared/footer/footer.component';
 import {ChatbotComponent} from "./shared/chatbot/chatbot.component"
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormReservationComponent } from './form-reservation/form-reservation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ChatbotComponent,
-    FooterComponent],
+    FooterComponent,
+    FormReservationComponent],
   imports: [
     BrowserModule,
     NgbModule,
