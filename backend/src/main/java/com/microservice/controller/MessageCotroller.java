@@ -1,6 +1,5 @@
 package com.microservice.controller;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.microservice.Service.LanguageMapper;
 import com.microservice.Service.MessageService;
-
-
-import opennlp.tools.langdetect.Language;
-import opennlp.tools.langdetect.LanguageDetector;
-import opennlp.tools.langdetect.LanguageDetectorME;
-import opennlp.tools.langdetect.LanguageDetectorModel;
 
 
 @RestController

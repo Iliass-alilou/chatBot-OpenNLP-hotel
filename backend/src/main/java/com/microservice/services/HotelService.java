@@ -6,5 +6,5 @@ import models.Room;
 
 public interface HotelService {
 	public Room addRoom(Room room);
-	public List<Room> getDisp();
+	public List<Room> getDisp(boolean dispo);
 }

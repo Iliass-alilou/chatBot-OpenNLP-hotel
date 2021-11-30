@@ -20,4 +20,12 @@ public class Room {
 	private double price;
 	private int max_person;
 	private boolean dipo;
+	
+	
+	public Room(String number,double price,int max_person,boolean dipo){
+		this.setDipo(dipo);
+		this.setMax_person(max_person);
+		this.setNumber(number);
+		this.setPrice(price);
+	}
 }

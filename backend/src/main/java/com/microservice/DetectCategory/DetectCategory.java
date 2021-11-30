@@ -13,7 +13,6 @@ public class DetectCategory {
 
 		double[] probabilitiesOfOutcomes = myCategorizer.categorize(finalTokens);
 		String category = myCategorizer.getBestCategory(probabilitiesOfOutcomes);
-		System.out.println("Category: " + category);
 
 		return category;
 

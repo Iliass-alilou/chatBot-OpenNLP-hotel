@@ -4,8 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
@@ -22,7 +20,6 @@ public class Tokenizer {
 
 			// Tokenize sentence.
 			String[] tokens = myCategorizer.tokenize(sentence);
-			System.out.println("Tokenizer : " + Arrays.stream(tokens).collect(Collectors.joining(" | ")));
 
 			return tokens;
 
